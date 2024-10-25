@@ -1,0 +1,16 @@
+[package]
+name = "rust-base"
+version = "0.1.0"
+edition = "2021"
+authors = ["Grapple228"]
+
+[dependencies]
+tokio = { version = "1.41.0", features = ["full"] }
+# Tracing
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+#Other
+derive_more = { version = "1.0.0", features = ["from", "display"] }
+
+[dev-dependencies]
+anyhow = "1.0.91"

@@ -1,5 +1,19 @@
+#![allow(unused)] // For beginning only.
+
+// region:    --- Modules
+
 use tracing::info;
 use tracing_subscriber::EnvFilter;
+
+pub use crate::prelude::*;
+
+pub mod config;
+mod error;
+mod fs;
+pub mod prelude;
+mod utils;
+
+// endregion: --- Modules
 
 pub fn init() {
     // LOGGING INITIALIZATION

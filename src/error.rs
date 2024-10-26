@@ -9,7 +9,6 @@ pub enum Error {
 
     // -- Config
     ConfigMissingEnv(&'static str),
-    ConfigMissing(&'static str),
 
     // -- fs
     InvalidPath,

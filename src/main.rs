@@ -1,6 +1,6 @@
 #![allow(unused)] // For beginning only.
 
-use rust_base::{init, prelude::*};
+use rust_base::{config::config, init, prelude::*};
 use std::fs::read_dir;
 
 #[tokio::main]

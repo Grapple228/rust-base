@@ -1,18 +1,14 @@
 #![allow(unused)] // For beginning only.
 
-use rust_base::{config::config, init, prelude::*};
+use rust_base::{config, execute, init};
+use rust_base::{Error, Result};
 use std::fs::read_dir;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    init();
+    rust_base::init();
 
-    Err(Error::InvalidPath)?;
-
-    for entry in read_dir("./")?.filter_map(|e| e.ok()) {
-        let entry: String = W(&entry).try_into()?;
-        println!("{}", entry);
-    }
+    rust_base::execute(false)?;
 
     Ok(())
 }

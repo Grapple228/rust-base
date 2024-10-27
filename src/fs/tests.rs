@@ -1,19 +1,18 @@
-use crate::prelude::*;
-
 type Error = Box<dyn std::error::Error>;
 type Result<T> = core::result::Result<T, Error>; // For tests.
 
 use super::*;
 
 #[tokio::test]
-async fn test_name() -> Result<()> {
+async fn test_fs_execute_not_error() -> Result<()> {
     // -- Setup & Fixtures
 
     // -- Exec
 
     // -- Check
 
-    return Err("Unable to load file....".into());
+    // Run method that can return error
+    execute(true)?;
 
     Ok(())
 }

@@ -2,6 +2,10 @@
 
 use derive_more::From;
 
+use crate::fs;
+
+pub type Result<T> = core::result::Result<T, Error>;
+
 #[derive(Debug, From)]
 pub enum Error {
     #[from]
@@ -11,7 +15,8 @@ pub enum Error {
     ConfigMissingEnv(&'static str),
 
     // -- fs
-    InvalidPath,
+    #[from]
+    Fs(fs::Error), // as example
 
     // -- Externals
     #[from]

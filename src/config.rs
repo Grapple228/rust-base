@@ -1,6 +1,7 @@
-use std::{env, sync::OnceLock};
+//! Crate config
 
-use crate::{Error, Result};
+use crate::error::{Error, Result};
+use std::{env, sync::OnceLock};
 
 pub fn config() -> &'static Config {
     static INSTANCE: OnceLock<Config> = OnceLock::new();
@@ -12,16 +13,17 @@ pub fn config() -> &'static Config {
 }
 
 #[allow(non_snake_case)]
+#[derive(Debug)]
 pub struct Config {
-    // -- Web
-    pub WEB_FOLDER: String,
+    // -- fs
+    pub FS_VAR: String,
 }
 
 impl Config {
     fn load_from_env() -> Result<Config> {
         Ok(Config {
-            // -- Web
-            WEB_FOLDER: get_env("SERVICE_WEB_FOLDER")?,
+            // -- fs
+            FS_VAR: get_env("FS_VAR")?,
         })
     }
 }

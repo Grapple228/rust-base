@@ -6,6 +6,7 @@
 
 # Scope down tracing, to filter out external lib tracing.
 RUST_LOG = "debug"
+FS_VAR = "var"
 
 # -- Service Environment Variables
 # IMPORTANT: 

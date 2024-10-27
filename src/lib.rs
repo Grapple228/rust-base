@@ -2,20 +2,22 @@
 
 // region:    --- Modules
 
-use tracing::info;
+use tracing::{debug, info};
 use tracing_subscriber::EnvFilter;
 
-pub use crate::prelude::*;
-
-pub mod config;
+// -- Modules
+mod config;
 mod error;
 mod fs;
-pub mod prelude;
-mod utils;
+
+// -- Flatten
+pub use config::config;
+pub use error::{Error, Result};
+pub use fs::execute;
 
 // endregion: --- Modules
 
-pub fn init() {
+pub fn init() -> Result<()> {
     // LOGGING INITIALIZATION
     tracing_subscriber::fmt()
         .without_time() // For early development
@@ -24,4 +26,11 @@ pub fn init() {
         .init();
 
     info!("Initializing");
+
+    // CONFIG INITIALIZATION
+    info!("Loading config...");
+    let config = config();
+    debug!("{:?}", config);
+
+    Ok(())
 }

@@ -12,7 +12,7 @@ async fn test_fs_execute_not_error() -> Result<()> {
     // -- Check
 
     // Run method that can return error
-    execute(true)?;
+    execute(false)?;
 
     Ok(())
 }

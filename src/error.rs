@@ -1,37 +1,25 @@
 //! Main Crate Error
 
+use derive_more::derive::From;
+
 use crate::fs;
 
 pub type Result<T> = core::result::Result<T, Error>;
 
-#[derive(Debug)]
+#[derive(Debug, From)]
 pub enum Error {
     // -- Config
     ConfigMissingEnv(&'static str),
     ConfigWrongFormat(&'static str),
 
     // -- Modules
+    #[from]
     Fs(fs::Error), // as example
 
     // -- Externals
+    #[from]
     Io(std::io::Error), // as example
 }
-
-// region:    --- Froms
-
-impl From<fs::Error> for Error {
-    fn from(val: fs::Error) -> Self {
-        Self::Fs(val)
-    }
-}
-
-impl From<std::io::Error> for Error {
-    fn from(val: std::io::Error) -> Self {
-        Self::Io(val)
-    }
-}
-
-// endregion: --- Froms
 
 // region:    --- Error Boilerplate
 

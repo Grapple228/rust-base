@@ -9,25 +9,31 @@ This is template structure for cargo projects
 [Learn more about `cargo generate` here.](https://github.com/ashleygwilliams/cargo-generate)
 
 ```sh
-cargo generate --git https://github.com/rustwasm/wasm-pack-template.git --name my-project
+cargo generate --git https://github.com/Grapple228/rust-base.git --name my-project
 cd my-project
 ```
 
 ## Dev setup
 
-### For execution app on save, use command:
+Firstly install `cargo-watch`
+
+```sh
+cargo install cargo-watch
+```
+
+### For execution app on save, use command
 
 ```sh
 cargo watch -q -c -w src/ -w .cargo/ -x run
 ```
 
-### For execution test app on save, use command:
+### For execution test app on save, use command
 
 ```sh
 cargo watch -q -c -w examples/ -w .cargo/ -x "run --example quick-dev"
 ```
 
-### For execution tests on save, use command:
+### For execution tests on save, use command
 
 ```sh
 cargo watch -q -c -x "test -q -- --nocapture"

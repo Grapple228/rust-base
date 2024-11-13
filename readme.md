@@ -1,17 +1,43 @@
-# Cargo Rust project base  
+# Cargo Rust project base
 
 This is template structure for cargo projects
 
-## Dev setup  
+## 🚴 Usage
 
-For execution app on save, use command:  
+### 🐑 Use `cargo generate` to Clone this Template
 
-``` sh
+[Learn more about `cargo generate` here.](https://github.com/ashleygwilliams/cargo-generate)
+
+```sh
+cargo generate --git https://github.com/rustwasm/wasm-pack-template.git --name my-project
+cd my-project
+```
+
+## Dev setup
+
+### For execution app on save, use command:
+
+```sh
 cargo watch -q -c -w src/ -w .cargo/ -x run
 ```
 
-For execution test app on save, use command:  
+### For execution test app on save, use command:
 
 ```sh
-cargo watch -q -c -w examples/ -x "run --example quick-dev"
+cargo watch -q -c -w examples/ -w .cargo/ -x "run --example quick-dev"
 ```
+
+### For execution tests on save, use command:
+
+```sh
+cargo watch -q -c -x "test -q -- --nocapture"
+```
+
+## License
+
+Licensed under either of
+
+- Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+
+at your option.

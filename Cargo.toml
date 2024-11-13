@@ -1,10 +1,15 @@
 [package]
-name = "rust-base"
+name = "{{project-name}}"
 version = "0.1.0"
 edition = "2021"
 authors = ["Grapple228"]
 
+[lints.rust]
+unsafe_code = "forbid"
+# unused = { level = "allow", priority = -1 } # For exploratory dev.
+
 [dependencies]
+# Async
 tokio = { version = "1.41.0", features = ["full"] }
 # Tracing
 tracing = "0.1.40"

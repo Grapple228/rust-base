@@ -3,7 +3,7 @@ name = "{{project-name}}"
 version = "0.1.0"
 edition = "2021"
 description = "{{description}}"
-authors = ["Grapple228"]
+authors = ["{{authors}}"]
 
 [lints.rust]
 unsafe_code = "forbid"

@@ -2,8 +2,6 @@
 
 use derive_more::derive::From;
 
-use crate::fs;
-
 pub type Result<T> = core::result::Result<T, Error>;
 
 #[derive(Debug, From)]
@@ -13,8 +11,6 @@ pub enum Error {
     ConfigWrongFormat(&'static str),
 
     // -- Modules
-    #[from]
-    Fs(fs::Error), // as example
 
     // -- Externals
     #[from]

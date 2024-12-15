@@ -14,17 +14,11 @@ pub fn config() -> &'static Config {
 
 #[allow(non_snake_case)]
 #[derive(Debug)]
-pub struct Config {
-    // -- fs
-    pub FS_VAR: String,
-}
+pub struct Config {}
 
 impl Config {
     fn load_from_env() -> Result<Config> {
-        Ok(Config {
-            // -- fs
-            FS_VAR: get_env("FS_VAR")?,
-        })
+        Ok(Config {})
     }
 }
 

@@ -1,5 +1,3 @@
-#![allow(unused)] // For beginning only.
-
 // region:    --- Modules
 
 use tracing::{debug, info};
@@ -8,12 +6,10 @@ use tracing_subscriber::EnvFilter;
 // -- Modules
 mod config;
 mod error;
-mod fs;
 
 // -- Flatten
 pub use config::config;
 pub use error::{Error, Result};
-pub use fs::execute;
 
 // endregion: --- Modules
 

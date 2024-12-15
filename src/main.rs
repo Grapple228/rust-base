@@ -1,14 +1,9 @@
-#![allow(unused)] // For beginning only.
-
-use rust_base::{config, execute, init};
-use rust_base::{Error, Result};
-use std::fs::read_dir;
+use {{project-name}}::{config, init};
+use {{project-name}}::{Error, Result};
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    rust_base::init();
-
-    rust_base::execute(false)?;
+    {{project-name}}::init();
 
     Ok(())
 }

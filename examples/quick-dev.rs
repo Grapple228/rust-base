@@ -1,6 +1,4 @@
-#![allow(unused)] // For beginning only.
-
-use anyhow::Result;
+use {{project-name}}::Result;
 
 #[tokio::main]
 async fn main() -> Result<()> {

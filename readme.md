@@ -1,49 +1,53 @@
-# Cargo Rust project base
+# {{project-name}}
 
-This is template structure for cargo projects
+`{{project-name}}` is a library for...
 
-## 🚴 Usage
+## Table of contents
 
-### 🐑 Use `cargo generate` to Clone this Template
+- [{{project-name}}](#{{project-name}})
+- [Description](#description)
+- [Features](#features)
+- [Installation](#installation)
+- [Examples](#examples)
+- [Plans for Future](#plans-for-future)
+- [Acknowledgments](#acknowledgments)
+- [Contributing](#contributing)
+- [License](#license)
 
-[Learn more about `cargo generate` here.](https://github.com/ashleygwilliams/cargo-generate)
+## Description
 
-```sh
-cargo generate --git https://github.com/Grapple228/rust-base.git --name my-project
-cd my-project
+- **feature**: feature description
+
+## Features
+
+- **feature**: enables...
+
+## Installation
+
+To include `{{project-name}}` in your project, add it to your dependencies. For example:
+
+```toml
+# Example for Cargo.toml (Rust)
+[dependencies]
+{{project-name}} = { version = "*", features = ["scylla", "redis"] }
 ```
 
-## Dev setup
+## Examples
 
-Firstly install `cargo-watch`
-
-```sh
-cargo install cargo-watch
+```rust
+// code here
 ```
 
-### For execution app on save, use command
+## Plans for future
 
-```sh
-cargo watch -q -c -w src/ -w .cargo/ -x run
-```
+- Implement something...
 
-### For execution test app on save, use command
+## Acknowledgments
 
-```sh
-cargo watch -q -c -w examples/ -w .cargo/ -x "run --example quick-dev"
-```
+## Contributing
 
-### For execution tests on save, use command
-
-```sh
-cargo watch -q -c -x "test -q -- --nocapture"
-```
+Contributions are welcome! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request. I wrote this library for my own use, so it may not fit everyone's needs, but your input is appreciated!
 
 ## License
 
-Licensed under either of
-
-- Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or [LINK](http://www.apache.org/licenses/LICENSE-2.0))
-- MIT license ([LICENSE](LICENSE) or [LINK](http://opensource.org/licenses/MIT))
-
-at your option.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

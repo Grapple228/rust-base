@@ -1,8 +1,11 @@
-use {{project-name}}::Result;
+use {{project-name}}::init;
+use {{project-name}}::{Result, Error};
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    println!("Hello, world!");
+    {{project-name}}::init();
+
+    println!("quick-dev");
 
     Ok(())
 }

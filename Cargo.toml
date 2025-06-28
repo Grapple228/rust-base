@@ -2,10 +2,10 @@
 name = "{{project-name}}"
 version = "0.1.0"
 edition = "2021"
-license = "MIT OR Apache-2.0"
+license = "MIT"
 description = "{{description}}"
 authors = ["{{authors}}"]
-readme = "README.md"
+readme = "readme.md"
 repository = "https://github.com/{{username}}/{{project-name}}.git"
 
 [lints.rust]
@@ -13,6 +13,10 @@ unsafe_code = "forbid"
 unused = { level = "allow", priority = -1 } # For exploratory dev.
 
 [dependencies]
+# My libs
+grapple_utils = { version = "*", features = ["b64", "b58", "cuuid"] }
+grapple_db = { version = "*", features = [ "redis"] }
+
 # Async
 tokio = { version = "1", features = ["full"] }
 # Tracing
@@ -23,3 +27,4 @@ derive_more = {version = "1", features = ["from"] }
 
 [dev-dependencies]
 anyhow = "1"
+httpc-test = "0.1"

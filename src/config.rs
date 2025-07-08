@@ -19,8 +19,8 @@ pub fn config() -> &'static Config {
 pub struct Config {}
 
 impl Config {
-    fn load_from_env() -> Result<Config> {
-        Ok(Config {
+    fn load_from_env() -> Result<Self> {
+        Ok(Self {
             // load envs here using envs::
         })
     }

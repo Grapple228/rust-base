@@ -1,9 +1,8 @@
-use {{project-name}}::init;
 use {{project-name}}::{Error, Result};
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    {{project-name}}::init();
+    {{project-name}}::init()?;
 
     println!("app");
 

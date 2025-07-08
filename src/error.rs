@@ -7,12 +7,14 @@ pub type Result<T> = core::result::Result<T, Error>;
 #[derive(Debug, From)]
 pub enum Error {
     // -- Config
-    ConfigMissingEnv(&'static str),
-    ConfigWrongFormat(&'static str),
+    ConfigAlreadyInitialized,
 
     // -- Modules
 
     // -- Externals
+    #[from]
+    Envs(grapple_utils::envs::Error),
+
     #[from]
     Io(std::io::Error), // as example
 }

@@ -25,10 +25,9 @@ impl Config {
         })
     }
 
-    pub fn init_from(cfg: Self) {
-        match INSTANCE.set(cfg) {
-            Ok(_) => (),
-            Err(_) => warn!("Config was already configured"),
-        }
+    pub fn init_from(cfg: Self) -> Result<()> {
+        INSTANCE
+            .set(cfg)
+            .map_err(|_| Error::ConfigAlreadyInitialized)
     }
 }
